@@ -87,7 +87,7 @@ function App() {
           <TopicGrid
             topics={topics}
             selectedTopicId={selectedTopicId}
-            onSelectTopic={setSelectedTopicId}
+            onSelectTopic={(id) => setSelectedTopicId(id)}
             onSelectView={setView}
           />
 
@@ -295,7 +295,7 @@ function App() {
               </button>
             </div>
 
-            {selectedTopic.exercises.filter((exercise, index) => {
+            {selectedTopic.exercises.filter((_, index) => {
               const practiceLevel = getPracticeLevelFromIndex(index)
               if (practiceLevel > unlockedLevelId) {
                 return false

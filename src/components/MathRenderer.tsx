@@ -21,7 +21,6 @@ export function MathRenderer({ expression, block = false }: MathRendererProps) {
     // detect LaTeX \frac{a}{b}
     const latexMatch = expression.match(/\\frac\{([^}]+)\}\{([^}]+)\}/)
     if (latexMatch) {
-      const [, n, d] = latexMatch
       // try KaTeX render first, but also provide a clear HTML fallback
       return (
         <span className="math-inline">

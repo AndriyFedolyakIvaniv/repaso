@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 
 import { getLevelFromPoints } from '../data/levels'
 import { badges } from '../data/badges'
-import type { ProgressState, Topic, TopicProgress } from '../types/math'
+import type { ProgressState, Topic, TopicProgress, TopicId } from '../types/math'
 
 const STORAGE_KEY = 'repaso-matematicas-progress-v1'
 
@@ -33,7 +33,7 @@ const hasBadge = (state: ProgressState, badgeId: string) => state.badges.include
 
 const getTopicProgress = (
   state: ProgressState,
-  topicId: string,
+  topicId: TopicId,
   totalExercises: number,
 ): TopicProgress => {
   const existing = state.themeCompletion[topicId]
@@ -76,7 +76,7 @@ export const useProgress = (topics: Topic[]) => {
     [topics],
   )
 
-  const getCompletionBadgeId = (topicId: string) => `topic-${topicId}`
+  const getCompletionBadgeId = (topicId: TopicId) => `topic-${topicId}`
 
   const markExercise = ({
     topicId,
@@ -85,7 +85,7 @@ export const useProgress = (topics: Topic[]) => {
     usedHint,
     correct,
   }: {
-    topicId: string
+    topicId: TopicId
     exerciseId: string
     basePoints: number
     usedHint: boolean

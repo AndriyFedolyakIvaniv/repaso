@@ -1,9 +1,9 @@
-import type { Topic, ViewMode } from '../types/math'
+import type { Topic, ViewMode, TopicId } from '../types/math'
 
 interface TopicGridProps {
   topics: Topic[]
-  selectedTopicId: string
-  onSelectTopic: (topicId: string) => void
+  selectedTopicId: TopicId
+  onSelectTopic: (topicId: TopicId) => void
   onSelectView: (view: ViewMode) => void
 }
 
