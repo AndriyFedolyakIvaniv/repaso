@@ -4,5 +4,3 @@ declare module 'react-katex' {
   export const InlineMath: ComponentType<{ math: string }>
   export const BlockMath: ComponentType<{ math: string }>
 }
-
-export {}
