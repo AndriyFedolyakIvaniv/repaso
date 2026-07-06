@@ -32,3 +32,9 @@ If you are developing a production application, we recommend enabling type-aware
 ```
 
 See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+
+## Deploy on GitHub Pages
+
+This project is configured to deploy through GitHub Actions. In the repository settings, set **Pages** to use **GitHub Actions** as the source.
+
+When you push to `main`, the workflow at `.github/workflows/deploy.yml` builds the app and publishes the `dist` folder to GitHub Pages.
