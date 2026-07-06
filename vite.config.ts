@@ -6,6 +6,7 @@ import babel from '@rolldown/plugin-babel'
 export default defineConfig({
   base: '/repaso/',
   build: {
+    outDir: 'docs',
     cssMinify: false,
   },
   plugins: [
