@@ -5,10 +5,6 @@ import babel from '@rolldown/plugin-babel'
 // https://vite.dev/config/
 export default defineConfig({
   base: '/repaso/',
-  build: {
-    outDir: 'docs',
-    cssMinify: false,
-  },
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] })
